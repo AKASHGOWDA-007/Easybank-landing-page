@@ -1,0 +1,71 @@
+@use "./util/" as u;
+@use "./util/functions" as f;
+@use "./variables" as v;
+
+.feature {
+    background-color: v.$lightGrayishBlue;
+    text-align: center;
+
+    @include u.breakpoint-up(medium) {
+        text-align: left;
+    }
+
+    &__intro {
+        margin-bottom: f.rem(60);
+        @include u.breakpoint-up(large) {
+            width: 60%;
+        }
+    }
+
+    &__grid {
+
+        @include u.breakpoint-up(medium) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        padding: f.rem(15);
+        padding-left: 0;
+
+        @include u.breakpoint-up(medium) {
+            flex: 1 0 50%;
+            flex-wrap: wrap;
+        }
+
+        @include u.breakpoint-up(large) {
+            flex: 1;
+        }
+    }
+
+    &__icon {
+        margin-bottom: f.rem(30);
+
+        @include u.breakpoint-up(large) {
+            margin-bottom: f.rem(44);
+        }
+    }
+    
+    &__title {
+        font-size: f.rem(20);
+        font-weight: 400;
+        line-height: 1.15;
+        color: v.$darkBlue;
+        margin-bottom: f.rem(16);
+        
+        @include u.breakpoint-up(large) {
+            font-size: f.rem(24);
+            margin-bottom: f.rem(25);
+        }
+    }
+    
+    &__description {
+        font-size: f.rem(16);
+        line-height: 1.5;
+        font-weight: 300;
+
+        @include u.breakpoint-up(large) {
+        }
+    }
+}
